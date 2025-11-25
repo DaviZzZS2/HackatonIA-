@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gravação de Consulta</title>
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="#" class="btn-cadastro">Cadastrar Novo Paciente</a>
+    </header>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="mic-icon-top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+            </div>
+            
+            <h2>Gravação de Consulta</h2>
+            <p>Grave o áudio da consulta e informe o CPF do paciente</p>
+        </div>
+
+        <div class="form-group">
+            <label for="cpf">CPF do Paciente *</label>
+            <input type="text" id="cpf" value="000.000.000-00" required>
+        </div>
+
+        <div class="form-group audio-section">
+            <label>Gravação de Áudio *</label>
+            <div class="audio-box">
+                <div class="mic-circle" id="mic-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+                </div>
+
+                <div class="timer" id="timer">00:00</div>
+                <p class="status-text" id="status-text">Pronto para gravar</p>
+                
+                <button class="btn-primary" id="recordBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-start"><path d="M21 12l-18 12 0-24 18 12z"/></svg>
+                    <span id="record-text">Iniciar Gravação</span>
+                </button>
+                <button class="btn-stop" id="stopBtn" disabled style="display: none;">Parar Gravação</button>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <button class="btn-secondary" id="voltarBtn">Voltar</button>
+            <button class="btn-submit" id="submitBtn" disabled>Enviar Gravação</button>
+        </div>
+    </div>
+    
+    <div id="result-area" style="margin-top: 20px;">
+        <h3>Resultado da análise:</h3>
+        <pre id="resultado"></pre>
+    </div>
+</div>
+
+<script src="/script.js"></script> </body>
+</html>

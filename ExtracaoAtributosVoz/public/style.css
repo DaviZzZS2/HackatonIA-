@@ -1,0 +1,221 @@
+:root {
+    --color-primary: #007bff; /* Azul primário (para botões de ação) */
+    --color-mic: #11a670;    /* Verde do ícone do microfone */
+    --color-gray-border: #e0e0e0;
+    --color-text-light: #6c757d;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.btn-cadastro {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mic-icon-top {
+    width: 50px;
+    height: 50px;
+    background: #e6f7f2; /* Fundo verde claro */
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mic-icon-top svg {
+    color: var(--color-mic);
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 5px;
+}
+
+.card-header p {
+    color: var(--color-text-light);
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Campos de Formulário */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-gray-border);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* Seção de Áudio - Área centralizada */
+.audio-section {
+    padding-top: 15px;
+    border-top: 1px solid var(--color-gray-border);
+}
+
+.audio-box {
+    text-align: center;
+    padding: 30px 0;
+    border: 1px solid var(--color-gray-border);
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.mic-circle {
+    width: 100px;
+    height: 100px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-light);
+    transition: all 0.3s;
+}
+
+.mic-circle.recording {
+    background: #ffe6e6; /* Cor de gravação */
+    color: #cc0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Efeito "pulsante" */
+}
+
+.timer {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.status-text {
+    color: var(--color-text-light);
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* Botões de Ação Principal */
+.btn-primary {
+    padding: 10px 20px;
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+.icon-start {
+    margin-right: 8px;
+}
+
+/* Rodapé do Card */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-gray-border);
+}
+
+.btn-secondary {
+    padding: 12px 25px;
+    background: #fff;
+    color: var(--color-text-light);
+    border: 1px solid var(--color-gray-border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-submit {
+    /* Gradiente sutil para o botão de envio */
+    padding: 12px 25px;
+    background-image: linear-gradient(to right, #6dd5ed, #2196f3);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #ccc;
+}
+
+/* Estilo para Resultado da Análise */
+#resultado {
+    white-space: pre-wrap;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--color-gray-border);
+    max-width: 100%;
+    overflow-wrap: break-word;
+    overflow-x: auto;
+    font-family: Consolas, monospace;
+    font-size: 0.9em;
+}

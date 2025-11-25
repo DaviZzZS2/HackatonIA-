@@ -2,13 +2,15 @@ import parselmouth
 from parselmouth.praat import call
 import librosa
 import numpy as np
+import sys
 
 from pydub import AudioSegment
-import os
 import tempfile
-
 from dotenv import load_dotenv
 import os
+
+sys.stderr = open(os.devnull, 'w')
+
 
 # Carrega automaticamente as variáveis do arquivo .env
 load_dotenv("C:\HackatonIA++\ExtracaoAtributosVoz\mangaba.env")
@@ -23,10 +25,10 @@ google_key = os.getenv("GOOGLE_API_KEY")
 from mangaba import Agent
 
 perfil_falante = {
-    "idade": "20 Anos",
-    "sexo": "Feminino",
+    "idade": "21 Anos",
+    "sexo": "Masculino",
     "tabagista": "Não",
-    "condicoes_medicas": ["Nenhuma conhecida", "Histórico de stress"]
+    "condicoes_medicas": ["Nenhuma conhecida"]
 }
 
 agente_voz = Agent(
@@ -39,7 +41,7 @@ agente_voz = Agent(
         "elas influenciam métricas como F0 (frequência fundamental)."
     ),
     llm="models/gemini-pro-latest",  # ou outro modelo do Google Gemini
-    verbose=True
+    verbose=False
 )
 
 
